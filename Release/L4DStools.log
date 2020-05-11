@@ -1,0 +1,10 @@
+﻿  L4DStools.cpp
+E:\Senny\Other\Left 4 dead_devs\L4D_Server_plugin\L4D_SDK\utils\L4DStools\L4DStools.cpp(9,69): warning C4081: требуется "newline"; обнаружен ";"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1267,5): warning MSB8012: TargetPath(E:\Senny\Other\Left 4 dead_devs\L4D_Server_plugin\L4D_SDK\utils\L4DStools\Release\L4DStools.dll) does not match the Linker's OutputFile property value (D:\Steam\steamapps\common\left 4 dead\left4dead\addons\L4DStools.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     Создается библиотека E:\Senny\Other\Left 4 dead_devs\L4D_Server_plugin\L4D_SDK\utils\L4DStools\Release\L4DStools.lib и объект E:\Senny\Other\Left 4 dead_devs\L4D_Server_plugin\L4D_SDK\utils\L4DStools\Release\L4DStools.exp
+  Создание кода
+  16 of 103 functions (15.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  L4DStools.vcxproj -> E:\Senny\Other\Left 4 dead_devs\L4D_Server_plugin\L4D_SDK\utils\L4DStools\Release\L4DStools.dll
