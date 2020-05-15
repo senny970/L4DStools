@@ -24,6 +24,7 @@ public:
 	IClientMode* GetClientModeInterface();
 	IClientMode* IclientMode = NULL;
 	IClientEntityList* entList = NULL;	
+	IBaseClientDLL* base_dll = NULL;
 	void PrintInterfaces();
 private:
 };
@@ -33,6 +34,7 @@ L4DInterface::L4DInterface()
 
 	//IclientMode = GetClientModeInterface();
 	entList = (IClientEntityList*)clientFactory(VCLIENTENTITYLIST_INTERFACE_VERSION, NULL);
+	base_dll = (IBaseClientDLL*)clientFactory(CLIENT_DLL_INTERFACE_VERSION, NULL);
 }
 
 L4DInterface::~L4DInterface()
@@ -56,7 +58,7 @@ void L4DInterface::PrintInterfaces() {
 	Msg("\nInterfaces:\n");
 	Msg("IClientMode: %x\n", IclientMode);
 	Msg("IClientEntityList: %x\n", entList);
-
+	Msg("IBaseClientDLL: %x\n", base_dll);
 	Msg("\n");
 }
 

@@ -19,3 +19,4 @@
 #include "../SDK/icliententitylist.h"
 #include "../SDK/icliententity.h"
 #include "../SDK/view_shared.h"
+#include "../SDK/cdll_int.h"

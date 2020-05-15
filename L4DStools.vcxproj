@@ -100,17 +100,17 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>
-      </AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>SDK\libs\public;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>mathlib.lib;tier0.lib;tier1.lib;tier2.lib;vstdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>mathlib.lib;tier0.lib;tier1.lib;tier2.lib;vstdlib.lib;Detours\detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libc;libcd;libcmt;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <OutputFile>D:\Steam\steamapps\common\left 4 dead\left4dead\addons\L4DStools.dll</OutputFile>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,14 +129,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ImGui\imgui.cpp" />
+    <ClCompile Include="ImGui\imgui_demo.cpp" />
+    <ClCompile Include="ImGui\imgui_draw.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="ImGui\imgui_widgets.cpp" />
     <ClCompile Include="L4DStools.cpp" />
     <ClCompile Include="Utils\opcode_len_calc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\SDKheaders.h" />
     <ClInclude Include="Common\L4Dinterfaces.h" />
-    <ClInclude Include="Hooks\L4DHooks.h" />
+    <ClInclude Include="D3D\D3D.h" />
+    <ClInclude Include="ImGui\imconfig.h" />
+    <ClInclude Include="ImGui\imgui.h" />
+    <ClInclude Include="ImGui\imgui_impl_dx9.h" />
+    <ClInclude Include="ImGui\imgui_impl_win32.h" />
+    <ClInclude Include="ImGui\imgui_internal.h" />
+    <ClInclude Include="ImGui\imstb_rectpack.h" />
+    <ClInclude Include="ImGui\imstb_textedit.h" />
+    <ClInclude Include="ImGui\imstb_truetype.h" />
     <ClInclude Include="SDK\basetypes.h" />
+    <ClInclude Include="SDK\ButtonCode.h" />
+    <ClInclude Include="SDK\cdll_int.h" />
+    <ClInclude Include="SDK\checksum_crc.h" />
     <ClInclude Include="SDK\client_render_handle.h" />
     <ClInclude Include="SDK\Color.h" />
     <ClInclude Include="SDK\const.h" />
@@ -156,11 +173,13 @@
     <ClInclude Include="SDK\idatacache.h" />
     <ClInclude Include="SDK\igameevents.h" />
     <ClInclude Include="SDK\ihandleentity.h" />
+    <ClInclude Include="SDK\InputEnums.h" />
     <ClInclude Include="SDK\interface.h" />
     <ClInclude Include="SDK\iserverplugin.h" />
     <ClInclude Include="SDK\ivmodelrender.h" />
     <ClInclude Include="SDK\mathlib.h" />
     <ClInclude Include="SDK\platform.h" />
+    <ClInclude Include="SDK\string_t.h" />
     <ClInclude Include="SDK\strtools.h" />
     <ClInclude Include="SDK\tier1.h" />
     <ClInclude Include="SDK\tier2.h" />

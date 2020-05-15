@@ -16,17 +16,17 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{9e84c959-7e2f-4b56-8ebc-ab9d5e86ed39}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GlowHack">
-      <UniqueIdentifier>{5c51b6b1-8db5-4dec-b9ac-e13b221fa74c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SDK">
       <UniqueIdentifier>{9118d872-dd10-4856-bf3a-9d271895505b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common">
       <UniqueIdentifier>{ea2dbb6a-526d-4d01-9afe-49f5580653ef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Hooks">
-      <UniqueIdentifier>{cf12d64b-2f67-4bab-bad2-ce57aaf9fb56}</UniqueIdentifier>
+    <Filter Include="D3D">
+      <UniqueIdentifier>{3d5a44d5-992d-4c78-a136-6b143356da66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{0914cea7-070d-459c-8e45-486f1e8907d8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +35,24 @@
     </ClCompile>
     <ClCompile Include="Utils\opcode_len_calc.cpp">
       <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_demo.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_dx9.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp">
+      <Filter>ImGui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,8 +176,47 @@
     <ClInclude Include="SDK\view_shared.h">
       <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="Hooks\L4DHooks.h">
-      <Filter>Hooks</Filter>
+    <ClInclude Include="D3D\D3D.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\cdll_int.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\checksum_crc.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ButtonCode.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\InputEnums.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\string_t.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_dx9.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_win32.h">
+      <Filter>ImGui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
