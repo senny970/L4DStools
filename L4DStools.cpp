@@ -76,10 +76,10 @@ bool L4DStools::Load(	CreateInterfaceFn interfaceFactory, CreateInterfaceFn game
 	ConnectTier2Libraries( &interfaceFactory, 1 );
 	
 
-	pL4Dinterface = new L4DInterface();
+	g_pL4Dinterface = new L4DInterface();
 
-	if (pL4Dinterface) {
-		pL4Dinterface->PrintInterfaces();
+	if (g_pL4Dinterface) {
+		g_pL4Dinterface->PrintInterfaces();
 	}
 
 	ImGuiSetup();
@@ -236,8 +236,7 @@ void L4DStools::FireGameEvent( KeyValues * event )
 
 CON_COMMAND(l4d_stools_showui, "")
 {
-	active = !active;
-	Msg("open\n");
+	active = !active;	
 }
 
 

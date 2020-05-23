@@ -20,3 +20,8 @@
 #include "../SDK/icliententity.h"
 #include "../SDK/view_shared.h"
 #include "../SDK/cdll_int.h"
+#include "../SDK/iinputsystem.h"
+#include "../SDK/IPanel.h"
+#include "../SDK/dt_common.h"
+#include "../SDK/dt_recv.h"
+#include "../SDK/client_class.h"

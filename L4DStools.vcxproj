@@ -154,12 +154,15 @@
     <ClInclude Include="SDK\ButtonCode.h" />
     <ClInclude Include="SDK\cdll_int.h" />
     <ClInclude Include="SDK\checksum_crc.h" />
+    <ClInclude Include="SDK\client_class.h" />
     <ClInclude Include="SDK\client_render_handle.h" />
     <ClInclude Include="SDK\Color.h" />
     <ClInclude Include="SDK\const.h" />
     <ClInclude Include="SDK\convar.h" />
     <ClInclude Include="SDK\dbg.h" />
     <ClInclude Include="SDK\dbgflag.h" />
+    <ClInclude Include="SDK\dt_common.h" />
+    <ClInclude Include="SDK\dt_recv.h" />
     <ClInclude Include="SDK\IAppSystem.h" />
     <ClInclude Include="SDK\icliententity.h" />
     <ClInclude Include="SDK\icliententitylist.h" />
@@ -173,8 +176,10 @@
     <ClInclude Include="SDK\idatacache.h" />
     <ClInclude Include="SDK\igameevents.h" />
     <ClInclude Include="SDK\ihandleentity.h" />
+    <ClInclude Include="SDK\iinputsystem.h" />
     <ClInclude Include="SDK\InputEnums.h" />
     <ClInclude Include="SDK\interface.h" />
+    <ClInclude Include="SDK\IPanel.h" />
     <ClInclude Include="SDK\iserverplugin.h" />
     <ClInclude Include="SDK\ivmodelrender.h" />
     <ClInclude Include="SDK\mathlib.h" />
