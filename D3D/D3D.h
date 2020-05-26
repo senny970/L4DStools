@@ -1,4 +1,3 @@
-
 #pragma comment ( lib , "d3d9.lib" )
 #pragma comment(lib, "detours.lib")
 
@@ -76,7 +75,11 @@ const char* szConvertType(int iType)
 	return "Unknown";
 }
 
-void DumpNetVar(RecvTable* pTable, int iLevel = 1)
+int data_int = 0;
+float data_float = 0.0f;
+Vector data_vector = Vector(0, 0, 0);
+
+void DumpNetVar(RecvTable* pTable, int iLevel = 1, IClientEntity *entity = NULL)
 {
 	for (int i = 0; i < pTable->m_nProps; ++i)
 	{
@@ -88,14 +91,32 @@ void DumpNetVar(RecvTable* pTable, int iLevel = 1)
 			if (Prop.m_pDataTable->m_nProps <= 0)
 				continue;
 
-			ImGui::Text( "%*sclass %s // %s 0x%.4X\n%*s{\n", iLevel4, "\t", Prop.m_pVarName, Prop.m_pDataTable->m_pNetTableName, Prop.m_Offset, iLevel4, "\t");
+			ImGui::Text("%*sclass %s // %s 0x%X\n%*s{\n", iLevel4, "\t", Prop.m_pVarName, Prop.m_pDataTable->m_pNetTableName, Prop.m_Offset, iLevel4, "\t");
 
-			DumpNetVar(Prop.m_pDataTable, iLevel + 1);
+			DumpNetVar(Prop.m_pDataTable, iLevel + 1, entity);
 
-			ImGui::Text( "%*s};\n\n", iLevel4, "\t");
+			ImGui::Text("%*s};\n\n", iLevel4, "\t");
 		}
 		else
-			ImGui::Text( "%*s%s %s; // 0x%.4X\n", iLevel4, "\t", szConvertType(Prop.m_RecvType), Prop.m_pVarName, Prop.m_Offset);
+			if (strcmp(szConvertType(Prop.m_RecvType), "int") == 0) {
+				data_int = *(int*)((char*)entity + Prop.m_Offset);
+				ImGui::Text("%*s%s %s; // 0x%X : %d\n", iLevel4, "\t", szConvertType(Prop.m_RecvType), Prop.m_pVarName, Prop.m_Offset, data_int);				
+				continue;
+			}
+
+			if (strcmp(szConvertType(Prop.m_RecvType), "float") == 0) {
+				data_float = *(float*)((char*)entity + Prop.m_Offset);
+				ImGui::Text("%*s%s %s; // 0x%X : %.2f\n", iLevel4, "\t", szConvertType(Prop.m_RecvType), Prop.m_pVarName, Prop.m_Offset, data_float);
+				continue;
+			}
+
+			if (strcmp(szConvertType(Prop.m_RecvType), "Vector") == 0) {
+				data_vector = *(Vector*)((char*)entity + Prop.m_Offset);
+				ImGui::Text("%*s%s %s; // 0x%X : (%f, %f, %f)\n", iLevel4, "\t", szConvertType(Prop.m_RecvType), Prop.m_pVarName, Prop.m_Offset, data_vector.x, data_vector.y, data_vector.z);
+				continue;
+			}
+
+			ImGui::Text( "%*s%s %s; // 0x%X\n", iLevel4, "\t", szConvertType(Prop.m_RecvType), Prop.m_pVarName, Prop.m_Offset);
 	}
 }
 
@@ -195,7 +216,7 @@ void EntityInspector(bool *show) {
 
 		ImGui::SameLine();
 
-		ImGui::BeginChild(child_properties, ImVec2(350, 350), true, window_flags2);
+		ImGui::BeginChild(child_properties, ImVec2(400, 350), true, window_flags2);
 
 		if (ImGui::BeginMenuBar())
 		{
@@ -211,7 +232,7 @@ void EntityInspector(bool *show) {
 			if (ent) {
 				//ImGui::Text("%d %s", selected, ent->GetClientClass()->m_pNetworkName);
 				//DumpTable(pTable, 0);
-				DumpNetVar(pTable, 0);
+				DumpNetVar(pTable, 0, ent);
 			}
 		}
 
